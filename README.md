@@ -1,10 +1,12 @@
 # SampleProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
+And JSON mock API server
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm start` for a node js server Navigate to `http://localhost:3000/`.
 
 ## Code scaffolding
 
@@ -14,14 +16,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+sample of UI
+user dashboard
+![image](https://github.com/s4ki3f/sample_project/assets/29111757/c8522f8e-a2a2-414b-b351-1cbbb7bb3bcc)
+edit user
+![image](https://github.com/s4ki3f/sample_project/assets/29111757/9e85cf1b-14a1-41f7-ab76-c47e009904af)
+adding user
+![image](https://github.com/s4ki3f/sample_project/assets/29111757/83fc7cc7-6ef7-4379-8c94-aeead72014f4)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
