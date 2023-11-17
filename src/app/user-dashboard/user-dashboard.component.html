@@ -1,78 +1,79 @@
 <nav class="navbar navbar-light bg-secondary rounded">
-        <div class="container-fluid">
-                <h1 style="color: #cbfade;">User Dashboard</h1>
-                <div class="d-flex">
-                        <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" buttn class="btn btn-success">Add User</button>
-                </div>
-        </div>    
+    <div class="container-fluid">
+        <h1 class="text-lime-500 text-3xl font-bold" style="font-family: 'Arial', sans-serif;">User Dashboard</h1>
+        <div class="flex">
+            <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add User</button>
+        </div>
+    </div>
 </nav>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">User ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Role</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let row of userData">
-           <td>{{row.id}}</td>
-            <td>{{row.firstname}}</td>
-            <td>{{row.lastname}}</td>
-            <td>{{row.email}}</td>
-            <td>{{row.role}}</td>
-            <td>
-                <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
-                <button (click)="deleteUser(row)" class="btn btn-danger mx-3">Delete</button>
-            </td>
-        </tr>
-        <!-- Add more rows as needed -->
-    </tbody>
-</table>
+<div class="container mx-auto">
+    <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+            <tr>
+                <th scope="col" class="px-6 py-3 bg-gray-100 border-b border-gray-300">User ID</th>
+                <th scope="col" class="px-6 py-3 bg-gray-100 border-b border-gray-300">First Name</th>
+                <th scope="col" class="px-6 py-3 bg-gray-100 border-b border-gray-300">Last Name</th>
+                <th scope="col" class="px-6 py-3 bg-gray-100 border-b border-gray-300">Email</th>
+                <th scope="col" class="px-6 py-3 bg-gray-100 border-b border-gray-300">Role</th>
+                <th scope="col" class="px-6 py-3 bg-gray-100 border-b border-gray-300">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of userData" class="border-b border-gray-300">
+                <td class="px-6 py-4">{{row.id}}</td>
+                <td class="px-6 py-4">{{row.firstname}}</td>
+                <td class="px-6 py-4">{{row.lastname}}</td>
+                <td class="px-6 py-4">{{row.email}}</td>
+                <td class="px-6 py-4">{{row.role}}</td>
+                <td class="px-6 py-4">
+                    <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                    <button (click)="deleteUser(row)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mx-3">Delete</button>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
 
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">User Details</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            <form [formGroup]="userForm">
-                <div class="mb-3">
-                <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" formControlName="firstname">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title text-3xl font-bold" id="exampleModalLabel">User Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                        <form [formGroup]="userForm">
+                                <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" formControlName="firstname">
+                                </div>
+                                <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" formControlName="lastname">
+                                </div>
+                                <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" formControlName="email">
+                                </div>
+                                <div class="mb-3">
+                                <label for="roleSelect" class="form-label">Role</label>
+                                <select class="form-select" id="roleSelect" formControlName="role">
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                        <option value="guest">Guest</option>
+                                </select>
+                                </div>
+                        </form>
                 </div>
-                <div class="mb-3">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" formControlName="lastname">
-                </div>
-                <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" formControlName="email">
-                </div>
-                <div class="mb-3">
-                <label for="roleSelect" class="form-label">Role</label>
-                <select class="form-select" id="roleSelect" formControlName="role">
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                    <option value="guest">Guest</option>
-                </select>
-                </div>
-            </form>
-        </div>
 
-        <div class="modal-footer">
-            <button type="button" *ngIf="showAdd" (click)="postUserDetails()" class="btn btn-primary">Add</button>
-            <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" *ngIf="showUpdate" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+                <div class="modal-footer">
+                        <button type="button" *ngIf="showAdd" (click)="postUserDetails()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add</button>
+                        <button type="button" id="cancel" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" data-bs-dismiss="modal">Close</button>
+                        <button type="button" *ngIf="showUpdate" (click)="updateUserDetails()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update</button>
+                </div>
         </div>
     </div>
-  </div>
 </div>

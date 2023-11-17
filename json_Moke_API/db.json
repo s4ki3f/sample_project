@@ -13,6 +13,13 @@
       "lastname": "Sakif",
       "email": "th4ki3f@gmail.com",
       "role": "user"
+    },
+    {
+      "id": 3,
+      "firstname": "sad",
+      "lastname": "sad",
+      "email": "Aakib",
+      "role": "admin"
     }
   ]
 }
