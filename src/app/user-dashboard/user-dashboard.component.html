@@ -1,0 +1,78 @@
+<nav class="navbar navbar-light bg-secondary rounded">
+        <div class="container-fluid">
+                <h1 style="color: #cbfade;">User Dashboard</h1>
+                <div class="d-flex">
+                        <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" buttn class="btn btn-success">Add User</button>
+                </div>
+        </div>    
+</nav>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of userData">
+           <td>{{row.id}}</td>
+            <td>{{row.firstname}}</td>
+            <td>{{row.lastname}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.role}}</td>
+            <td>
+                <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="deleteUser(row)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">User Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <form [formGroup]="userForm">
+                <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstname">
+                </div>
+                <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastname">
+                </div>
+                <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+                </div>
+                <div class="mb-3">
+                <label for="roleSelect" class="form-label">Role</label>
+                <select class="form-select" id="roleSelect" formControlName="role">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                    <option value="guest">Guest</option>
+                </select>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" *ngIf="showAdd" (click)="postUserDetails()" class="btn btn-primary">Add</button>
+            <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" *ngIf="showUpdate" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+  </div>
+</div>
