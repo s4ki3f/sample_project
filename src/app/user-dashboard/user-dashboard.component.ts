@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserModel } from './user-dashboard.model';
 import { ApiService } from '../shared/api.service';
+import { environment } from '../../environments/environment';
+
 
 
 @Component({
@@ -19,6 +21,8 @@ export class UserDashboardComponent {
   constructor(private fb: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
+    const apiKey = environment.apiKey;
+    const apiUrl = environment.apiUrl;
     this.userForm = this.fb.group({
       firstname: [''],
       lastname: [''],
