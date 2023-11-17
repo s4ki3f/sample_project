@@ -35,3 +35,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ![image](https://github.com/s4ki3f/sample_project/assets/29111757/83fc7cc7-6ef7-4379-8c94-aeead72014f4)
 
 
+**short video**
+
+`https://drive.google.com/file/d/16oHHVKwMbJ5nFbADH9E2NbjUDap7dQUf/view?usp=sharing`
