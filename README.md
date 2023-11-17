@@ -16,15 +16,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-##sample of UI
+## Sample of UI
 
-user dashboard
+**user dashboard**
 ![image](https://github.com/s4ki3f/sample_project/assets/29111757/c8522f8e-a2a2-414b-b351-1cbbb7bb3bcc)
 
-edit user
+**edit user**
 ![image](https://github.com/s4ki3f/sample_project/assets/29111757/9e85cf1b-14a1-41f7-ab76-c47e009904af)
 
-adding user
+**adding user**
 ![image](https://github.com/s4ki3f/sample_project/assets/29111757/83fc7cc7-6ef7-4379-8c94-aeead72014f4)
 
 
