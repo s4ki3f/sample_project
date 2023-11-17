@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Sadiqul",
+      "lastname": "Sakif",
+      "email": "th4ki3f@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "firstname": "Sadiqul",
+      "lastname": "Sakif",
+      "email": "th4ki3f@gmail.com",
+      "role": "user"
+    }
+  ]
+}
